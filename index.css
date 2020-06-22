@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+body {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(./images/bg-bottom.svg), url(./images/bg-top.svg);
+    background-repeat: no-repeat;
+    background-position: bottom, top;
+    background-position-x: left, right;
+    padding: 8px;
+}
+
+main {
+    text-align: center;
+}
+
+header div {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+header {
+    color: hsl(233, 13%, 49%);
+    margin-bottom: 5vh;
+}
+
+label {
+    position: relative;
+    width: 50px;
+    height: 20px;
+    margin: 0 15px;
+}
+
+input#checkbox {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: -webkit-fill-available;
+    background-image: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.slider:before {
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    content: "";
+    width: 40%;
+    height: 80%;
+    background-color: white;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+.slider:hover {
+    background-image: linear-gradient(0deg, hsl(234, 14%, 74%), hsl(234, 14%, 74%));
+}
+
+input:checked+.slider:before {
+    transform: translateX(21px);
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    min-width: 270px;
+    max-width: 400px;
+    width: 30%;
+    padding: 0 30px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 15px;
+    height: fit-content;
+    color: hsl(233, 13%, 49%);
+    box-shadow: 0px 0px 15px 3px #0000002e;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card h4 {
+    margin: 25px 0;
+    font-size: 22px;
+}
+
+.card h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 20px 0;
+    font-size: calc(20px + 0.8vw);
+    color: hsl(232, 13%, 33%);
+}
+
+.card h2 span {
+    margin-left: 10px;
+    font-size: calc(40px + 1.2vw);
+}
+
+.card ul li {
+    padding: 18px;
+    border-bottom: 1px solid hsl(234, 14%, 74%);
+}
+
+.card ul li:nth-child(1) {
+    border-top: 1px solid hsl(234, 14%, 74%);
+}
+
+.card button {
+    margin: 10px 0 30px 0;
+    height: 45px;
+    color: white;
+    border: transparent;
+    background-color: transparent;
+    background-image: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    border-radius: 7px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.card.active {
+    padding: 20px 30px;
+    background-image: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    color: white;
+    box-shadow: none;
+}
+
+.card.active h2 {
+    color: white;
+}
+
+.card.active button {
+    color: hsl(237, 63%, 64%);
+    background-image: linear-gradient(45deg, white, white);
+}
+
+.card.active button:hover {
+    color: white;
+    background-image: linear-gradient(45deg, transparent, transparent);
+    border: 1px solid white;
+}
+
+.card button:hover {
+    color: hsl(237, 63%, 64%);
+    background-image: linear-gradient(45deg, transparent, transparent);
+    border: 1px solid hsl(237, 63%, 64%);
+}
+
+@media (max-width: 824px) {
+    body {
+        background-image: url(./images/bg-top.svg);
+        background-position-y: -6%;
+        background-position-x: calc(38vw + 40%);
+    }
+    section {
+        flex-direction: column;
+    }
+    .card {
+        width: 90%;
+        max-width: 400px;
+        min-width: 200px;
+        margin: 20px 0;
+    }
+    .card ul li {
+        padding: 15px;
+    }
+    .card button {
+        margin: 20px 0 31px 0;
+    }
+    .card h2 {
+        font-size: 40px;
+        margin: 0 0 10px 0;
+    }
+    .card h2 span {
+        font-size: calc(50px + 1.5vw);
+    }
+}
+
+.attribution {
+    margin-top: 50px;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
